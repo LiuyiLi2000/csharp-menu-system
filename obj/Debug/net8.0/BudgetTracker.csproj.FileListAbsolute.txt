@@ -12,3 +12,4 @@ C:\Users\liliu\Downloads\BudgetTracker\obj\Debug\net8.0\refint\BudgetTracker.dll
 C:\Users\liliu\Downloads\BudgetTracker\obj\Debug\net8.0\BudgetTracker.pdb
 C:\Users\liliu\Downloads\BudgetTracker\obj\Debug\net8.0\BudgetTracker.genruntimeconfig.cache
 C:\Users\liliu\Downloads\BudgetTracker\obj\Debug\net8.0\ref\BudgetTracker.dll
+C:\Users\liliu\Downloads\BudgetTracker\obj\Debug\net8.0\BudgetTracker.sourcelink.json

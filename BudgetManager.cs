@@ -7,14 +7,20 @@ namespace BudgetTracker
     class BudgetManager
     {
         private List<Transaction> transactions = new List<Transaction>();
+        private string filePath = "transactions.txt"; // ✅ 统一文件路径
 
+        // -----------------------------
+        // 🟢 添加收入/支出
+        // -----------------------------
         public void AddTransaction(string type)
         {
             Console.Write("Enter description: ");
-            string desc = Console.ReadLine();
+            string desc = Console.ReadLine() ?? "";
 
             Console.Write("Enter amount: ");
-            if (decimal.TryParse(Console.ReadLine(), out decimal amount))
+            string input = Console.ReadLine() ?? "";
+
+            if (decimal.TryParse(input, out decimal amount))
             {
                 if (type == "Expense") amount = -Math.Abs(amount);
                 transactions.Add(new Transaction(type, desc, amount));
@@ -26,17 +32,32 @@ namespace BudgetTracker
             }
         }
 
+        // -----------------------------
+        // 📜 查看交易记录
+        // -----------------------------
         public void DisplayTransactions()
         {
             Console.WriteLine("\n📜 Transaction History:");
             Console.WriteLine("--------------------------------------------");
-            foreach (var t in transactions)
+
+            if (transactions.Count == 0)
             {
-                Console.WriteLine(t);
+                Console.WriteLine("(No transactions yet)");
             }
+            else
+            {
+                foreach (var t in transactions)
+                {
+                    Console.WriteLine(t);
+                }
+            }
+
             Console.WriteLine("--------------------------------------------");
         }
 
+        // -----------------------------
+        // 💵 查看余额
+        // -----------------------------
         public void DisplayBalance()
         {
             decimal balance = 0;
@@ -53,9 +74,12 @@ namespace BudgetTracker
             Console.ResetColor();
         }
 
-        public void SaveToFile(string fileName)
+        // -----------------------------
+        // 💾 保存到文件
+        // -----------------------------
+        public void SaveToFile()
         {
-            using (StreamWriter sw = new StreamWriter(fileName))
+            using (StreamWriter sw = new StreamWriter(filePath))
             {
                 foreach (var t in transactions)
                 {
@@ -64,11 +88,14 @@ namespace BudgetTracker
             }
         }
 
-        public void LoadFromFile(string fileName)
+        // -----------------------------
+        // 📂 从文件加载
+        // -----------------------------
+        public void LoadFromFile()
         {
-            if (!File.Exists(fileName)) return;
+            if (!File.Exists(filePath)) return;
 
-            string[] lines = File.ReadAllLines(fileName);
+            string[] lines = File.ReadAllLines(filePath);
             foreach (string line in lines)
             {
                 string[] parts = line.Split('|');
@@ -81,6 +108,16 @@ namespace BudgetTracker
                     transactions.Add(t);
                 }
             }
+        }
+
+        // -----------------------------
+        // 🧹 一键清零
+        // -----------------------------
+        public void ResetData()
+        {
+            transactions.Clear(); // 清空内存数据
+            File.WriteAllText(filePath, string.Empty); // 清空文件内容
+            Console.WriteLine("✅ All data has been reset. Starting fresh!");
         }
     }
 }

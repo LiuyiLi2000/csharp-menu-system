@@ -7,7 +7,7 @@ namespace BudgetTracker
         static void Main(string[] args)
         {
             BudgetManager manager = new BudgetManager();
-            manager.LoadFromFile("transactions.txt");
+            manager.LoadFromFile(); // ✅ 不再需要传参数
 
             while (true)
             {
@@ -21,10 +21,11 @@ namespace BudgetTracker
                 Console.WriteLine("3. View All Transactions");
                 Console.WriteLine("4. View Balance");
                 Console.WriteLine("5. Save & Exit");
+                Console.WriteLine("6. Reset All Data");
                 Console.WriteLine("====================================");
                 Console.Write("Select an option: ");
 
-                string choice = Console.ReadLine();
+                string choice = Console.ReadLine() ?? ""; // ✅ 防止 null
 
                 switch (choice)
                 {
@@ -41,9 +42,13 @@ namespace BudgetTracker
                         manager.DisplayBalance();
                         break;
                     case "5":
-                        manager.SaveToFile("transactions.txt");
+                        manager.SaveToFile(); // ✅ 不再需要传参数
                         Console.WriteLine("✅ Data saved. Goodbye!");
                         return;
+                    case "6":
+                        manager.ResetData(); // ✅ 一键清零功能
+                        Console.WriteLine("✅ All data cleared successfully!");
+                        break;
                     default:
                         Console.WriteLine("⚠️ Invalid choice. Try again.");
                         break;
