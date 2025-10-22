@@ -1,0 +1,14 @@
+C:\Users\liliu\Downloads\BudgetTracker\bin\Debug\net8.0\BudgetTracker.exe
+C:\Users\liliu\Downloads\BudgetTracker\bin\Debug\net8.0\BudgetTracker.deps.json
+C:\Users\liliu\Downloads\BudgetTracker\bin\Debug\net8.0\BudgetTracker.runtimeconfig.json
+C:\Users\liliu\Downloads\BudgetTracker\bin\Debug\net8.0\BudgetTracker.dll
+C:\Users\liliu\Downloads\BudgetTracker\bin\Debug\net8.0\BudgetTracker.pdb
+C:\Users\liliu\Downloads\BudgetTracker\obj\Debug\net8.0\BudgetTracker.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\liliu\Downloads\BudgetTracker\obj\Debug\net8.0\BudgetTracker.AssemblyInfoInputs.cache
+C:\Users\liliu\Downloads\BudgetTracker\obj\Debug\net8.0\BudgetTracker.AssemblyInfo.cs
+C:\Users\liliu\Downloads\BudgetTracker\obj\Debug\net8.0\BudgetTracker.csproj.CoreCompileInputs.cache
+C:\Users\liliu\Downloads\BudgetTracker\obj\Debug\net8.0\BudgetTracker.dll
+C:\Users\liliu\Downloads\BudgetTracker\obj\Debug\net8.0\refint\BudgetTracker.dll
+C:\Users\liliu\Downloads\BudgetTracker\obj\Debug\net8.0\BudgetTracker.pdb
+C:\Users\liliu\Downloads\BudgetTracker\obj\Debug\net8.0\BudgetTracker.genruntimeconfig.cache
+C:\Users\liliu\Downloads\BudgetTracker\obj\Debug\net8.0\ref\BudgetTracker.dll
